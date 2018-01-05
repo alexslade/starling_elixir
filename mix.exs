@@ -30,6 +30,12 @@ defmodule Starling.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:mix_test_watch, "~> 0.5", only: :dev, runtime: false},
+      {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
+      {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
+      {:httpoison, "~> 0.13"},
+      {:plug, "~> 1.2"}
+    ]
   end
 end
