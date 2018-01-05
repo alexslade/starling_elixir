@@ -10,11 +10,11 @@ use Mix.Config
 
 # You can configure for your application as:
 #
-#     config :starling_elixir, key: :value
+#     config :starling, key: :value
 #
 # And access this configuration in your application as:
 #
-#     Application.get_env(:starling_elixir, :key)
+#     Application.get_env(:starling, :key)
 #
 # Or configure a 3rd-party app:
 #

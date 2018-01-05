@@ -5,11 +5,11 @@
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `starling_elixir` to your list of dependencies in `mix.exs`:
+by adding `starling` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:starling_elixir, "~> 0.1.0"}]
+  [{:starling, "~> 0.1.0"}]
 end
 ```
 
