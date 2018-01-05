@@ -8,6 +8,8 @@ use Mix.Config
 # if you want to provide default values for your application for
 # 3rd-party users, it should be done in your "mix.exs" file.
 
+config :starling, endpoint: "https://api.starlingbank.com"
+
 # You can configure for your application as:
 #
 #     config :starling, key: :value
