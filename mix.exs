@@ -34,8 +34,7 @@ defmodule Starling.Mixfile do
       {:mix_test_watch, "~> 0.5", only: :dev, runtime: false},
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
       {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
-      {:httpoison, "~> 0.13"}, # HTTP library, unrelated to `poison`
-      {:poison, "~> 3.1"}, # JSON parsing, unreleated to `httpoison`
+      {:exhal, "~> 7.0.1"},
       {:plug, "~> 1.2"}
     ]
   end

@@ -25,49 +25,19 @@ defmodule Starling.Client do
     }}
   end
 
-  def get(client, path, params \\ :empty) do
-    request(client, :get, path, params)
+  def get(client, path) do
+    {:ok, doc, _response_header} =
+      ExHal.client()
+      |> ExHal.Client.add_headers(build_headers(client))
+      |> ExHal.Client.get(url(path))
+
+    {:ok, doc}
   end
 
-  defp request(client, method, path, params \\ :empty, body \\ "", headers \\ []) do
-    url = url(path, params)
+  defp url(path), do: "#{Application.get_env(:starling, :endpoint)}/#{path}"
 
-    headers =
-      headers
-      |> put_headers_default
-      |> put_headers_access_token(client)
-
-    case HTTPoison.request(method, url, body, headers) do
-      {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
-        {:ok, body}
-
-      {:ok, %HTTPoison.Response{} = error} ->
-        {:error, error}
-
-      {:error, %HTTPoison.Error{} = error} ->
-        {:error, error}
-    end
-  end
-
-  defp url(path, :empty), do: "#{Application.get_env(:starling, :endpoint)}/#{path}"
-
-  defp url(path, params) do
-    uri =
-      url(path, :empty)
-      |> URI.parse()
-      |> Map.put(:query, Plug.Conn.Query.encode(params))
-
-    URI.to_string(uri)
-  end
-
-  defp put_headers_default(headers) do
-    [{"User-Agent", "starling-elixir/#{Starling.version()}"} | headers]
-  end
-
-  defp put_headers_access_token(headers, nil), do: headers
-  defp put_headers_access_token(headers, %{access_token: nil}), do: headers
-
-  defp put_headers_access_token(headers, %{access_token: access_token}) do
-    [{"Authorization", "Bearer #{access_token}"} | headers]
+  defp build_headers(%{access_token: access_token}) do
+    ["User-Agent": "starling-elixir/#{Starling.version()}",
+     "Authorization": "Bearer #{access_token}"]
   end
 end
