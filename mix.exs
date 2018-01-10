@@ -35,7 +35,8 @@ defmodule Starling.Mixfile do
       {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
       {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
       {:exhal, "~> 7.0.1"},
-      {:plug, "~> 1.2"}
+      {:plug, "~> 1.2"},
+      {:exvcr, "~> 0.8.0", only: :test}
     ]
   end
 end

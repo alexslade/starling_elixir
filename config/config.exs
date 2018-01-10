@@ -10,25 +10,16 @@ use Mix.Config
 
 import_config "config.secret.exs"
 
-config :starling, endpoint: "https://api.starlingbank.com"
+config :starling, endpoint: "https://api-sandbox.starlingbank.com"
 
-# You can configure for your application as:
-#
-#     config :starling, key: :value
-#
-# And access this configuration in your application as:
-#
-#     Application.get_env(:starling, :key)
-#
-# Or configure a 3rd-party app:
-#
-#     config :logger, level: :info
-#
+if Mix.env == :test do
+  config :exvcr, [
+    vcr_cassette_library_dir: "test/fixtures/vcr_cassettes",
+    filter_sensitive_data: [
+      [pattern: "Bearer .+", placeholder: "<<<ACCESS_TOKEN_FILTERED>>>"]
+    ]
+  ]
+end
+# Uncomment to enable per-env config files
+#   import_config "#{Mix.env}.exs"
 
-# It is also possible to import configuration files, relative to this
-# directory. For example, you can emulate configuration per environment
-# by uncommenting the line below and defining dev.exs, test.exs and such.
-# Configuration from the imported file will override the ones defined
-# here (which is why it is important to import them last).
-#
-#     import_config "#{Mix.env}.exs"
