@@ -13,10 +13,8 @@ defmodule Starling.TransactionTest do
   test "list/1 returns transactions" do
     use_cassette "transactions/list" do
       {:ok, client} =
-        Starling.Client.personal_access_client(
-          Application.get_env(:starling, :personal_access_token),
-          Application.get_env(:starling, :client_id),
-          Application.get_env(:starling, :client_secret)
+        Starling.Client.from_access_token(
+          Application.get_env(:starling, :sandbox_access_token)
         )
 
       {:ok, transactions} = Transaction.list(client)

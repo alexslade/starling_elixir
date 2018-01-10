@@ -17,11 +17,9 @@ defmodule Starling.Client do
           user_id: String.t()
         }
 
-  def personal_access_client(access_token, client_id, client_secret) do
+  def from_access_token(access_token) do
     {:ok, %Starling.Client{
-      access_token: access_token,
-      client_id: client_id,
-      client_secret: client_secret
+      access_token: access_token
     }}
   end
 
