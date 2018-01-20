@@ -4,6 +4,7 @@
   "credo": {:hex, :credo, "0.8.10", "261862bb7363247762e1063713bb85df2bbd84af8d8610d1272cd9c1943bba63", [:mix], [{:bunt, "~> 0.2.0", [hex: :bunt, optional: false]}]},
   "dialyxir": {:hex, :dialyxir, "0.5.1", "b331b091720fd93e878137add264bac4f644e1ddae07a70bf7062c7862c4b952", [:mix], []},
   "exactor": {:hex, :exactor, "2.2.4", "5efb4ddeb2c48d9a1d7c9b465a6fffdd82300eb9618ece5d34c3334d5d7245b1", [:mix], []},
+  "exconstructor": {:hex, :exconstructor, "1.1.0", "272623a7b203cb2901c20cbb92c5c3ab103cc0087ff7c881979e046043346752", [:mix], []},
   "exhal": {:hex, :exhal, "7.0.1", "e6cf85f95b9db7478e3225ae74af8410e9c0a5ae32c0af86d3839c2008badcdf", [:mix], [{:httpoison, "~> 0.11.0", [hex: :httpoison, optional: false]}, {:poison, "~> 2.2 or ~> 3.0", [hex: :poison, optional: false]}, {:uri_template, "~> 1.0", [hex: :uri_template, optional: false]}]},
   "exjsx": {:hex, :exjsx, "4.0.0", "60548841e0212df401e38e63c0078ec57b33e7ea49b032c796ccad8cde794b5c", [:mix], [{:jsx, "~> 2.8.0", [hex: :jsx, optional: false]}]},
   "exvcr": {:hex, :exvcr, "0.8.12", "1ec5148708fedb9b4d0d32ca74bf8722de1854b5a666b3f8f9ba6fdee8353881", [:mix], [{:exactor, "~> 2.2", [hex: :exactor, optional: false]}, {:exjsx, "~> 4.0", [hex: :exjsx, optional: false]}, {:httpoison, "~> 0.11", [hex: :httpoison, optional: true]}, {:httpotion, "~> 3.0", [hex: :httpotion, optional: true]}, {:ibrowse, "~> 4.2.2", [hex: :ibrowse, optional: true]}, {:meck, "~> 0.8.3", [hex: :meck, optional: false]}]},

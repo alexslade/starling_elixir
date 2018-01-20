@@ -36,6 +36,7 @@ defmodule Starling.Mixfile do
       {:credo, "~> 0.8", only: [:dev, :test], runtime: false},
       {:exhal, "~> 7.0.1"},
       {:poison, "~> 3.0"},
+      {:exconstructor, "~> 1.1.0"},
       {:plug, "~> 1.2"},
       {:exvcr, "~> 0.8.0", only: :test}
     ]

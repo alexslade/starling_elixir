@@ -4,6 +4,7 @@ defmodule Starling.Client do
             token_type: nil,
             expires_in: nil,
             scope: nil
+  use ExConstructor
 
   @type t :: %__MODULE__{
           access_token: String.t(),
