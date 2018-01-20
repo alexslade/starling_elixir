@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "User-Agent": "starling-elixir/0.2.0",
+        "Authorization": "<<<ACCESS_TOKEN_FILTERED>>>"
+      },
+      "method": "get",
+      "options": {
+        "follow_redirect": "true"
+      },
+      "request_body": "",
+      "url": "https://api-sandbox.starlingbank.com/api/v1/me"
+    },
+    "response": {
+      "body": "{\"customerUid\":\"035a36ff-8aae-4d37-8d9d-fccd45969c18\",\"expiresAt\":\"2018-01-21T00:41:35.980Z\",\"authenticated\":true,\"expiresInSeconds\":85736,\"scopes\":[\"balance:read\",\"mandate:read\",\"metadata:create\",\"metadata:edit\",\"payee:read\",\"transaction:read\",\"savings-goal:read\",\"savings-goal-transfer:read\"]}",
+      "headers": {
+        "Date": "Sat, 20 Jan 2018 00:52:39 GMT",
+        "Content-Type": "application/json",
+        "Content-Length": "295",
+        "Connection": "keep-alive",
+        "Set-Cookie": "__cfduid=d15b485699759fa083d7490380db4af381516409559; expires=Sun, 20-Jan-19 00:52:39 GMT; path=/; domain=.starlingbank.com; HttpOnly",
+        "Expect-CT": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\"",
+        "Server": "cloudflare",
+        "CF-RAY": "3dfe0d60dd8e6aa9-LHR"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
