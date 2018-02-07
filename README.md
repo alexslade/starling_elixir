@@ -9,7 +9,7 @@ by adding `starling` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:starling, "~> 0.3.0"}]
+  [{:starling, "~> 0.4.0"}]
 end
 ```
 

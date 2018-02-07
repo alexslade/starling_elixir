@@ -19,14 +19,28 @@ defmodule Starling.Transaction do
           source: String.t()
         }
 
-  def list(client) do
-    with {:ok, document} <- Starling.Client.get(client, "api/v1/transactions"),
-         transactions <- Enum.map(document.links["transactions"], &decode_transaction/1) do
+  def list(client, opts \\ []) do
+    url = list_url(from: Keyword.get(opts, :from))
+
+    with {:ok, document} <- Starling.Client.get(client, url),
+         transactions <- decode_transactions(document.links["transactions"]) do
       {:ok, transactions}
     end
   end
 
-  defp decode_transaction(document) do
-    Poison.Decode.decode(document.target.properties, as: %Starling.Transaction{})
+  defp list_url(from: nil) do
+    "api/v1/transactions"
+  end
+
+  defp list_url(from: from) do
+    list_url(from: nil) <> "?" <> URI.encode_query(from: from)
+  end
+
+  defp decode_transactions(nil), do: []
+
+  defp decode_transactions(transactions) do
+    Enum.map(transactions, fn document ->
+      Poison.Decode.decode(document.target.properties, as: %Starling.Transaction{})
+    end)
   end
 end
