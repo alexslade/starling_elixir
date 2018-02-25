@@ -1,11 +1,19 @@
 # StarlingElixir
 
-**TODO: Add description**
+Elixir wrapper for Starling Bank. This is very alpha, built alongside a hobby app to learn Elixir. Only a few features so far, I'll add more over time. Please request specific additions or submit a pull request.
+
+### User
+* Get current user
+
+### Transactions
+* List all transactions
+
+### Client / Utility functions
+* GET any url
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `starling` to your list of dependencies in `mix.exs`:
+Add `starling` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -13,7 +21,5 @@ def deps do
 end
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/starling_elixir](https://hexdocs.pm/starling_elixir).
+Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc) and published on [HexDocs](https://hexdocs.pm). The docs can be found at [https://hexdocs.pm/starling_elixir](https://hexdocs.pm/starling_elixir).
 
