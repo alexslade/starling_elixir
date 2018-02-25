@@ -41,7 +41,8 @@ defmodule Starling.Mixfile do
       {:poison, "~> 3.0"},
       {:exconstructor, "~> 1.1.0"},
       {:plug, "~> 1.2"},
-      {:exvcr, "~> 0.8.0", only: :test}
+      {:exvcr, "~> 0.8.0", only: :test},
+      {:ex_doc, "~> 0.16", only: :dev, runtime: false}
     ]
   end
 
