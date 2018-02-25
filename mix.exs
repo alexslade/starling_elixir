@@ -48,7 +48,7 @@ defmodule Starling.Mixfile do
 
   defp package() do
     [
-      name: "starling_elixir",
+      name: "starling",
       files: ["lib", "test", "config", "mix.exs", "README.md", "LICENSE.md"],
       maintainers: ["Alex Heeton"],
       licenses: ["MIT"],
