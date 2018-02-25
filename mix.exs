@@ -6,9 +6,12 @@ defmodule Starling.Mixfile do
       app: :starling,
       version: "0.4.0",
       elixir: "~> 1.4",
+      description: "An Elixir wrapper for the Starling Bank API",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      source_url: "https://github.com/heeton/starling_elixir",
+      package: package()
     ]
   end
 
@@ -39,6 +42,16 @@ defmodule Starling.Mixfile do
       {:exconstructor, "~> 1.1.0"},
       {:plug, "~> 1.2"},
       {:exvcr, "~> 0.8.0", only: :test}
+    ]
+  end
+
+  defp package() do
+    [
+      name: "starling_elixir",
+      files: ["lib", "test", "config", "mix.exs", "README.md", "LICENSE.md"],
+      maintainers: ["Alex Heeton"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/heeton/starling_elixir"}
     ]
   end
 end
