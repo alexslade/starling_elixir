@@ -18,6 +18,8 @@ defmodule Starling.TransactionTest do
 
       {:ok, transactions} = Transaction.list(client)
       assert Enum.count(transactions) == 57
+      assert Enum.at(transactions, 0).amount == -3.36
+      assert Enum.at(transactions, 54).amount == 2000
 
       {:ok, transactions} = Transaction.list(client, from: ~D[2018-02-07])
       assert Enum.count(transactions) == 29
