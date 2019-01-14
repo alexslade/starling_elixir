@@ -19,6 +19,8 @@ defmodule Starling.Transaction do
           source: String.t()
         }
 
+  @callback list(Starling.Client.t(), Date.t()) :: list
+
   def list(client, opts \\ []) do
     url = list_url(from: Keyword.get(opts, :from))
 

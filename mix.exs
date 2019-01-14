@@ -4,7 +4,7 @@ defmodule Starling.Mixfile do
   def project do
     [
       app: :starling,
-      version: "0.4.0",
+      version: "0.5.0",
       elixir: "~> 1.4",
       description: "An Elixir wrapper for the Starling Bank API",
       build_embedded: Mix.env() == :prod,
@@ -42,7 +42,7 @@ defmodule Starling.Mixfile do
       {:exconstructor, "~> 1.1.0"},
       {:plug, "~> 1.2"},
       {:exvcr, "~> 0.8.0", only: :test},
-      {:ex_doc, "~> 0.16", only: :dev, runtime: false}
+      {:ex_doc, "~> 0.19", only: :dev, runtime: false}
     ]
   end
 
